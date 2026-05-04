@@ -1,0 +1,20 @@
+command /rp:
+    trigger:
+        if player has permission "fix.all":
+            if player's balance >= 2000: # ตรวจสอบยอดเงิน
+                remove 2000 from player's balance
+                loop all items in player's inventory:
+                    repair loop-item
+                send "&aRepair Success! -2000 money"
+            else:
+                send "&cคุณมีเงินไม่พอ!" # "คุณมีเงินไม่พอ!"
+
+command /rpall:
+    trigger:
+        if player has permission "fix.hand":
+            if player's balance >= 400: # ตรวจสอบยอดเงิน
+                remove 400 from player's balance
+                repair player's tool
+                send "&aRepair Success! -400 money"
+            else:
+                send "&cคุณมีเงินไม่พอ!" # "คุณมีเงินไม่พอ!"
